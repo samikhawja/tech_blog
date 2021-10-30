@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS project_db;
-CREATE DATABASE project_db;
+DROP DATABASE IF EXISTS tech_db;
+CREATE DATABASE tech_db;
 
-USE project_db;
+USE tech_db;
