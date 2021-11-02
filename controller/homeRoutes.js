@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -22,9 +23,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
+  console.log("getting by id")
   try {
-    const postData = await post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -34,17 +36,17 @@ router.get('/post/:id', async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in
     });
+    // res.json(post);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/post', withAuth, async (req, res) => {
+router.get('/posts', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
