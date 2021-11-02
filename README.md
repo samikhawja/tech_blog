@@ -25,7 +25,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="./assets/images/webpage.png" alt="Screenshot of terminal">
+<img src="./public/images/webpage.png" alt="Screenshot of webpage">
 
 For this application, I had to create a full stack tech blog application. The user will be able to post, comment and delete on the webpage about technology. When signed in, you can comment on any post and create your own posts as well! Per usual, this tested my knowledge with node.js and made me do a bunch of research to deliver the best application to the user. Of course, this was a fun to make and quite the challenge!
 
